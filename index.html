@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Tracker de cursos || Vue.js 2</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div id="app" class="container" >
+        <h1>
+            Mis Cursos de Programación
+        </h1>
+            <p>
+                <input type="text" placeholder="Titulo del curso" class="form-control" v-model="title"  required/>
+            </p>
+            <p>
+                <input type="number" placeholder="Horas"  class="form-control" v-model="time"  required/>
+            </p>
+            <p>
+                <button  @click="addCourse" class="btn btn-primary">Guardar Curso</button>
+            </p>
+    </fieldset>
+    <div>
+        <h3>Lista de Cursos</h3>
+        <p class="text-danger" v-if="courses.length <= 0">Aun no has realizado cursos</p>
+        <div v-else>
+            <ol>
+                <li v-for="(course, index) in courses"
+                    :key="index">
+                    <span>{{ course.title }} - {{ course.time }} horas.</span>
+                </li>
+            </ol>
+            <hr/>
+            <p>
+                Llevo <strong>{{ totalTime }}</strong> horas aprendiendo en Platzi.
+                <b>#NuncaParesDeAprender 💚</b>
+            </p>
+        </div>
+    </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="./app.js"></script>
+</body>
+</html>
