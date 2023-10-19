@@ -15,10 +15,13 @@
             Mis Cursos de Programación
         </h1>
             <p>
-                <input type="text" placeholder="Titulo del curso" class="form-control" v-model="title"  required/>
+                <label for="">Título del curso</label>
+                <input type="text" placeholder="Titulo del curso" class="form-control" v-model="title" />
             </p>
             <p>
-                <input type="number" placeholder="Horas"  class="form-control" v-model="time"  required/>
+                <label for="">Horas para terminar el curso</label>
+
+                <input type="number" placeholder="Horas"  class="form-control" v-model="time" />
             </p>
             <p>
                 <button  @click="addCourse" class="btn btn-primary">Guardar Curso</button>
@@ -36,7 +39,7 @@
             </ol>
             <hr/>
             <p>
-                Llevo <strong>{{ totalTime }}</strong> horas aprendiendo en Platzi.
+                🕐<strong>{{ totalTime }}</strong> horas aprendiendo en Platzi.
                 <b>#NuncaParesDeAprender 💚</b>
             </p>
         </div>
